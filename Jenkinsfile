@@ -10,7 +10,7 @@ node{
     }
    
    stage("Tag & Push image"){
-      withDockerRegistry([credentialsId: 'Docker ID', url: 'https://hub.docker.com']) {
+      withDockerRegistry([credentialsId: 'Docker-ID', url: 'https://hub.docker.com']) {
           sh 'docker tag saran2250/saranapp saran2250/saranapp:001'
           sh 'docker push saran2250/saranapp:001'
           sh 'docker push saran2250/saranapp:latest'
