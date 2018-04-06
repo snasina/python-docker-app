@@ -6,14 +6,14 @@ node{
       }
    
    stage('Docker Build') {
-     def app = docker.build "saran2250/saranapp"
+     def app = docker.build "saran2250/python-docker-app"
     }
    
    stage("Tag & Push image"){
       withDockerRegistry([credentialsId: 'Docker-ID', url: 'https://hub.docker.com']) {
-          sh 'docker tag saran2250/saranapp saran2250/saranapp:001'
-          sh 'docker push saran2250/saranapp:001'
-          sh 'docker push saran2250/saranapp:latest'
+          sh 'docker tag saran2250/python-docker-app saran2250/python-docker-app:001'
+          sh 'docker push saran2250/python-docker-app:001'
+          sh 'docker push saran2250/python-docker-app:latest'
       }
     }
    
