@@ -6,7 +6,7 @@ node{
       }
    
    stage('Docker Build') {
-     def app = docker.build "saran2250/python-docker-app"
+     def app = docker.build "python-docker-app"
     }
    
    stage("Tag & Push image"){
