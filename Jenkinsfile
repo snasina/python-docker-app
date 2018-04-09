@@ -10,7 +10,7 @@ node{
     }
    
    stage("Tag & Push image"){
-      withDockerRegistry([credentialsId: 'Docker-ID', url: 'https://hub.docker.com']) {
+      withDockerRegistry([credentialsId: 'Docker-ID', url: 'https://index.docker.io/v1/']) {
           sh 'docker tag saran2250/python-docker-app saran2250/python-docker-app:001'
           sh 'docker push saran2250/python-docker-app:001'
           sh 'docker push saran2250/python-docker-app:latest'
